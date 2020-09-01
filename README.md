@@ -7,4 +7,4 @@ Topics In Security: Cryptography
 #### WEBSITE: https://github.com/semeionj
 
 #### IMAGE:
-![Semeion Stafford](https://github.com/semeionj/3013-ALG-semeionj/blob/master/Semeion.jpg)
+![Semeion Stafford](https://github.com/semeionj/3013-ALG-semeionj/blob/master/Semeion.jpg =100x100)
