@@ -136,16 +136,24 @@ if __name__=='__main__':
     #print(F.sort_freq[1][0])
 
     freq = {}
+    freqOrig = {}
 
     for i in range(26):
       freq[F.sort_freq[i][0]] = tfreq[i]
-      #Toggle these lines to see what it actually converted to based on typical frequency.
-      #freq[F.sort_freq[i][0]] = tfreq[i]
+      
+      freqOrig[F.sort_freq[i][0]] = tfreqOrig[i]
       
     print(freq)
 
     text = str(text)
+    newTextOrig = ""
     newText = ""
+
+    for i in text:
+      if i in freqOrig.keys():
+        newTextOrig += freqOrig[i]
+      else:
+        newTextOrig += " "
 
     #Prints out new text based on typical substitutions
     for i in text:
@@ -154,4 +162,7 @@ if __name__=='__main__':
       else:
         newText += " "
 
+    print("\n\n")
+    print(newTextOrig)
+    print("\n\n")
     print(newText)
