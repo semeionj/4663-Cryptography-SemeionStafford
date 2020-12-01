@@ -2,4 +2,6 @@
 
 |   #   | Folder Link | Assignment Description |
 | :---: | ----------- | ---------------------- |
-|   A03    |    <a href="https://github.com/semeionj/4663-Cryptography-SemeionStafford/tree/master/Assignments/A03 ">Frequency Distribution</a>        |         Using Typical Frequency Distribution to Crack Substtution Cipher               |
+|   A03    |    <a href="https://github.com/semeionj/4663-Cryptography-SemeionStafford/tree/master/Assignments/A03 ">Frequency Distribution</a>        |         Using typical frequency distribution to crack substtution cipher               |
+|   A04    |    <a href="https://github.com/semeionj/4663-Cryptography-SemeionStafford/tree/master/Assignments/A04 ">Frequency Distribution</a>        |         This file implements a class that creates a ADFGX lookup table using a keyword
+    to build a polybuis square of format               |
