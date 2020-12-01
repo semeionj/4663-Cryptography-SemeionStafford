@@ -78,9 +78,6 @@ class Frequency():
 
         for l in alphabet:
             self.freq[l] = 0
-
-    def subText(letter):
-       x = 5
     
     def count(self,text):
         for l in text:
@@ -142,6 +139,8 @@ if __name__=='__main__':
 
     for i in range(26):
       freq[F.sort_freq[i][0]] = tfreq[i]
+      #Toggle these lines to see what it actually converted to based on typical frequency.
+      #freq[F.sort_freq[i][0]] = tfreq[i]
       
     print(freq)
 
