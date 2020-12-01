@@ -1,0 +1,39 @@
+Initial Array
+[['h', 'i', 'j', 'a', 'c', 'k'],
+ ['D', 'F', 'F', 'F', 'A', 'A'],
+ ['D', 'G', 'G', 'F', 'G', 'A'],
+ ['D', 'A', 'G', 'F', 'D', 'A'],
+ ['A', 'D', 'F', 'X', 'D', 'D'],
+ ['G', 'X', 'A', 'G', '', '']]
+
+
+Fractioning...
+[['a', 'c', 'h', 'i', 'j', 'k'],
+ ['F', 'A', 'D', 'F', 'F', 'A'],
+ ['F', 'G', 'D', 'G', 'G', 'A'],
+ ['F', 'D', 'D', 'A', 'G', 'A'],
+ ['X', 'D', 'A', 'D', 'F', 'D'],
+ ['G', '', 'G', 'X', 'A', '']]
+
+
+('Encrypted text', 'FFFXGAGDDDDDAGFGADXFGGFAAAAD')
+Recreated
+[['a', 'c', 'h', 'i', 'j', 'k'],
+ ['F', 'A', 'D', 'F', 'F', 'A'],
+ ['F', 'G', 'D', 'G', 'G', 'A'],
+ ['F', 'D', 'D', 'A', 'G', 'A'],
+ ['X', 'D', 'A', 'D', 'F', 'D'],
+ ['G', ' ', 'G', 'X', 'A', ' ']]
+
+
+ORDER
+[['h', 'i', 'j', 'a', 'c', 'k'],
+ ['D', 'F', 'F', 'F', 'A', 'A'],
+ ['D', 'G', 'G', 'F', 'G', 'A'],
+ ['D', 'A', 'G', 'F', 'D', 'A'],
+ ['A', 'D', 'F', 'X', 'D', 'D'],
+ ['G', 'X', 'A', 'G', ' ', ' ']]
+
+
+('Result:', 'DFFFAADGGFGADAGFDAADFXDDGXAG  ')
+('Converted to english is', 'discombobulate')
