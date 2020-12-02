@@ -13,9 +13,9 @@ After the initial substitution is done, I analyed the text by hand and made the 
 |   #   | File                       | Description                                                |
 | :---: | -------------------------- | ---------------------------------------------------------- |
 |   1   | [main.cpp](./main.cpp)     | solution file.                                             |
-|   2   | [input](./input)           | First test input file from problem statement                     |
-|   3   | [input2](./input2)         | Test input file from problem statement                             |
-|   4   | [decrypted_1](./decrypted_1)   | First decrypted text results |
+|   2   | [ciphertext_1](./ciphertext_1)           | First test input file from problem statement                     |
+|   3   | [ciphertext_2](./ciphertext_2)         | Second test input file from problem statement                             |
+|   4   | [decrypted_1](./decrypted_1.txt)   | First decrypted text results |
 |   5   | [decrypted_2](./decrypted_2.txt) | Second decrypted text results               |
 
 Issues Faced:
