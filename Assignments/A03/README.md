@@ -16,7 +16,7 @@ After the initial substitution is done, I analyed the text by hand and made the 
 |   2   | [input](./input)           | First test input file from problem statement                     |
 |   3   | [input2](./input2)         | Test input file from problem statement                             |
 |   4   | [decrypted_1](./decrypted_1)   | First decrypted text results |
-|   5   | [decrypted_2](./decrypted_2) | Second decrypted text results               |
+|   5   | [decrypted_2](./decrypted_2.txt) | Second decrypted text results               |
 
 Issues Faced:
 Originally expected the typically frequency substitution to crack code, before I realized that it had to be further edited.
