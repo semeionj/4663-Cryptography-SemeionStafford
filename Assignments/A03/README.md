@@ -10,5 +10,13 @@ This program decrypts a text file using a substitution cipher. A frequency analy
 ##### Method
 After the initial substitution is done, I analyed the text by hand and made the most likely substitutions. For example, seeing a word like "tae" could most likely mean that the 'a' is in the wrong position and should be mapped to a 'h' instead. Using these "proximity guesses" allowed me to bit by bit decrypt what the message said. For both the cypher texts, an updated frequency distribution table was subsequently used in order to decrypt the text file. Only one is showed in the python file for brevity, but the PDF here (https://github.com/semeionj/4663-Cryptography-SemeionStafford/blob/master/Assignments/A03/A03.pdf) lists what changes were made.
 
+|   #   | File                       | Description                                                |
+| :---: | -------------------------- | ---------------------------------------------------------- |
+|   1   | [main.cpp](./main.cpp)     | solution file.                                             |
+|   2   | [input](./input)           | Test input file from problem statement                     |
+|   3   | [input2](./input2)         | Larger test input from udebug                              |
+|   4   | [input_hex](./input_hex)   | Test file for hexograms to make sure they were right size. |
+|   5   | [input_even](./input_even) | Test file to see if any hexograms were even.               |
+
 Issues Faced:
 Originally expected the typically frequency substitution to crack code, before I realized that it had to be further edited.
