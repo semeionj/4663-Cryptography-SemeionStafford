@@ -13,10 +13,10 @@ After the initial substitution is done, I analyed the text by hand and made the 
 |   #   | File                       | Description                                                |
 | :---: | -------------------------- | ---------------------------------------------------------- |
 |   1   | [main.cpp](./main.cpp)     | solution file.                                             |
-|   2   | [input](./input)           | Test input file from problem statement                     |
-|   3   | [input2](./input2)         | Larger test input from udebug                              |
-|   4   | [input_hex](./input_hex)   | Test file for hexograms to make sure they were right size. |
-|   5   | [input_even](./input_even) | Test file to see if any hexograms were even.               |
+|   2   | [input](./input)           | First test input file from problem statement                     |
+|   3   | [input2](./input2)         | Test input file from problem statement                             |
+|   4   | [decrypted_1](./decrypted_1)   | First decrypted text results |
+|   5   | [decrypted_2](./decrypted_2) | Second decrypted text results               |
 
 Issues Faced:
 Originally expected the typically frequency substitution to crack code, before I realized that it had to be further edited.
