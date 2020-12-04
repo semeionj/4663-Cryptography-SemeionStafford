@@ -20,3 +20,18 @@ After the initial substitution is done, I analyed the text by hand and made the 
 
 Issues Faced:
 Originally expected the typically frequency substitution to crack code, before I realized that it had to be further edited.
+
+### Files
+
+|   #   | File            | Description                                        |
+| :---: | --------------- | -------------------------------------------------- |
+|   1   | Main.cpp         | Main driver of my project that launches game.      |
+|   2   | HelperClass.cpp  | Helper class that holds movement functions         |
+|   3   | TextureClass.cpp | Helper class that assists with textures and images |
+
+### Instructions
+- No cmd params required. Program is specific to fully decoding the ciphertext specified. Refer to PDF to see process.
+
+- Example Command:
+    - `python <code>
+    - `python main.cpp 
