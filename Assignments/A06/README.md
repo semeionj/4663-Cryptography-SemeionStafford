@@ -26,13 +26,11 @@ Given a large number, determine if it is prime or if it can be factored. If it c
 - My program expects one parameter to be placed on the command line when you run the program.
 - Parameters `<input file>`
 - The input file should be formatted with numbers on seperate line:
-
-
-
-| 231697363 |
+   
+`| 231697363 |
 | 709 |
-| 72490732415291 
-
+| 72490732415291 |
+`
 
 
 - The input file should be formatted with a players name and age on a seperate line:
