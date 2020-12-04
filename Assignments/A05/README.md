@@ -8,6 +8,7 @@ This program attempts to crack a vigenere cipher by calculating the incidence of
 ----------------------------------------------------------------------
 
 ##### Method
+Using the dictionary provided here and the newly discovered keylength, find all words in the dictionary of same length and proceed to brute force your way into decrypting the ciphertext.
 
 
 
