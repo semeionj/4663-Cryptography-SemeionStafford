@@ -17,7 +17,7 @@ Using the dictionary provided here and the newly discovered keylength, find all 
 |   1   | break_vig.py         | Main driver of my project that launches code.      |
 |   2   | decrypted.txt         | Decrption when manual key size of 7 is entered      |
 |   3   | dictionary.json         | JSON file with dictoionary words and definitions      |
-|   3   | plaintext.txt         | Plain text for decrypted.txt      |
+|   4   | plaintext.txt         | Plain text for decrypted.txt      |
 
 
 Issues Faced:
