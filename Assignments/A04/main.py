@@ -16,7 +16,42 @@
 """
 import sys
 import pprint as pp
+import os
 
+def mykwargs(argv):
+    '''
+    Processes argv list into plain args (list) and kwargs (dict).
+    Just easier than using a library like argparse for small things.
+    Example:
+        python file.py arg1 arg2 arg3=val1 arg4=val2 -arg5 -arg6 --arg7
+        Would create:
+            args[arg1, arg2, -arg5, -arg6, --arg7]
+            kargs{arg3 : val1, arg4 : val2}
+        Params with dashes (flags) can now be processed seperately
+    Shortfalls:
+        spaces between k=v would result in bad params
+        Flags aren't handled at all. Maybe in the future but this function
+            is meant to be simple.
+    Returns:
+        tuple  (args,kargs)
+    '''
+    args = []
+    kargs = {}
+
+    for arg in argv:
+        if '=' in arg:
+            key,val = arg.split('=')
+            kargs[key] = val
+        else:
+            args.append(arg)
+    return args,kargs
+
+def usage(message=None):
+    if message:
+        print(message)
+    print("Usage: python adfgx.py [input_file_name=string] [keyword1=string] [keyword2=string] op=[encrypt,decrypt]")
+    print("Example:\n\t python adfgx.py filename.txt arg1 arg2 decrypt\n")
+    sys.exit()
 
 class AdfgxLookup:
     def __init__(self, k=None):
@@ -382,17 +417,22 @@ class AdfgxLookup:
             sys.stdout.write("\n")
 
 
-if __name__ == '__main__':
+def main(args, **kwargs):
     #     A D F G X
     # A | p h q g m
     # D | e a y n o
     # F | f d x k r
     # G | c v s z w
     # X | b u t i l
+    
+    print(kwargs, "ARG")
+    op = kwargs["op"]
+    key1 = kwargs["key1"]
+    key2 = kwargs["key2"]
 
-    key1 = "superbad"
-    key2 = "hijack"
-    word = "discombobulate"
+    with open(args[0], "r") as file:
+      word = file.read().replace('\n', '')
+
     word_encrypt = ""
     key2_encrypt = ""
 
@@ -405,10 +445,25 @@ if __name__ == '__main__':
     # print out my adfgx lookup table
     # pp.pprint(lookup)
 
-    # ENCRYPT
-    encrypt = A.encrypt(key2, word)
-    print("Encrypted text", encrypt)
+    if op == "encrypt":
+      # ENCRYPT
+      encrypt = A.encrypt(key2, word)
+      print("Encrypted text", encrypt)
+    elif op == "decrypt":
+      # DECRYPT
+      decrypt = A.decrypt(key1, key2, word)
+      print("Converted to english is", decrypt)
 
-    # DECRYPT
-    decrypt = A.decrypt(key1, key2, encrypt)
-    print("Converted to english is", decrypt)
+if __name__ == '__main__':
+
+  required_params = 4 # adjust accordingly
+  argv = sys.argv[1:] # strip file name (skeleton.py) out of args
+
+  # print usage if not called correctly
+  if len(argv) < required_params:
+      usage()
+
+  # get processed command line args
+  args,kwargs = mykwargs(argv)
+
+  main(args,**kwargs)
