@@ -3,20 +3,42 @@
 ### Overview
 ----------------------------------------------------------------------
 
-This program decrypts a text file using a substitution cipher. A frequency analysis is ran on the letters and the typical Letter distribution for the english language is used to crack the text. Since the key was not given, just using the typical distribution does not work. So in the decryption process, we would need to figure out the additional mappings for each letter used.
+This program implements an ADFGX ciper decoder, and encoder using fractionating transposition and a modified Polybius square with a single columnar transposition (See more: http://practicalcryptography.com/ciphers/adfgx-cipher/). All the steps for the column operations are displayed when the program runs 
 
 ----------------------------------------------------------------------
 
 ##### Method
-After the initial substitution is done, I analyed the text by hand and made the most likely substitutions. For example, seeing a word like "tae" could most likely mean that the 'a' is in the wrong position and should be mapped to a 'h' instead. Using these "proximity guesses" allowed me to bit by bit decrypt what the message said. For both the cypher texts, an updated frequency distribution table was subsequently used in order to decrypt the text file. Only one is showed in the python file for brevity, but the PDF here (https://github.com/semeionj/4663-Cryptography-SemeionStafford/blob/master/Assignments/A03/A03.pdf) lists what changes were made.
+1. Build a table like the following with the key square. This is known as a polybius square.
+
+    A D F G X
+A | p h q g m 
+D | e a y n o 
+F | f d x k r
+G | c v s z w 
+X | b u t i l
+
+2. Encode the plaintext using this matrix, to encode the laetter 'a', locate it in the matrix and read off the letter on the far left side on the same row, followed by the letter at the top in the same column. In this way each plaintext letter is replaced by two cipher text letters. E.g. 'attack' -> 'DD XF XF DD GA FG'. The ciphertext is now twice as long as the original plaintext. Note that so far, it is just a simple substitution cipher, and trivial to break.
+
+3. Write the code word with the enciphered plaintext underneath e.g.
+
+G E R M A N
+D D X F X F
+D D G A F G
+
+4. Perform a columnar transposition. Sort the code word alphabetically, moving the columns as you go. Note that the letter pairs that make up each letter get split apart during this step, this is called fractionating.
+
+A E G M N R
+X D D F F X
+F D D A G G
+
+5. Read the final ciphertext off in columns.
+
+-> XF DD DD FA FG XG
+
 
 |   #   | File                       | Description                                                |
 | :---: | -------------------------- | ---------------------------------------------------------- |
-|   1   | [main.cpp](./main.cpp)     | solution file.                                             |
-|   2   | [ciphertext_1](./ciphertext_1)           | First test input file from problem statement                     |
-|   3   | [ciphertext_2](./ciphertext_2)         | Second test input file from problem statement                             |
-|   4   | [decrypted_1](./decrypted_1.txt)   | First decrypted text results |
-|   5   | [decrypted_2](./decrypted_2.txt) | Second decrypted text results               |
+|   1   | [adfgx.cpp](./main.cpp)     | solution file.                                             |
 
 Issues Faced:
 Originally expected the typically frequency substitution to crack code, before I realized that it had to be further edited.
@@ -25,13 +47,12 @@ Originally expected the typically frequency substitution to crack code, before I
 
 |   #   | File            | Description                                        |
 | :---: | --------------- | -------------------------------------------------- |
-|   1   | Main.cpp         | Main driver of my project that launches game.      |
-|   2   | HelperClass.cpp  | Helper class that holds movement functions         |
-|   3   | TextureClass.cpp | Helper class that assists with textures and images |
+|   1   | adfgx.cpp         | Main driver of my project that launches code.      |
 
 ### Instructions
-- No cmd params required. Program is specific to fully decoding the ciphertext specified. Refer to PDF to see process.
+- My program expects four parameters to be placed on the command line when you run the program.
+- Parameters `<input file> <keyword1> <keyword2> <operation>`
 
 - Example Command:
-    - `python <code>
-    - `python main.cpp 
+    - `python python adfgx.py decrypt.txt key1=superbad key2=hijack op=decrypt
+    - `python adfgx.py encrypt.txt key1=superbad key2=hijack op=encrypt 
