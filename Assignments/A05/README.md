@@ -10,20 +10,18 @@ This program attempts to crack a vigenere cipher by calculating the incidence of
 ##### Method
 Using the dictionary provided here and the newly discovered keylength, find all words in the dictionary of same length and proceed to brute force your way into decrypting the ciphertext.
 
-
-
-|   #   | File                       | Description                                                |
-| :---: | -------------------------- | ---------------------------------------------------------- |
-|   1   | [break_vig.py](./main.cpp)     | solution file.                                             |
-
-Issues Faced:
-Tried several methods for determining the actual key size. But eventually could not get it to work.
-
 ### Files
 
 |   #   | File            | Description                                        |
 | :---: | --------------- | -------------------------------------------------- |
 |   1   | break_vig.py         | Main driver of my project that launches code.      |
+|   2   | decrypted.txt         | Decrption when manual key size of 7 is entered      |
+|   3   | dictionary.json         | JSON file with dictoionary words and definitions      |
+|   3   | plaintext.txt         | Plain text for decrypted.txt      |
+
+
+Issues Faced:
+Tried several methods for determining the actual key size. But eventually could not get it to work.
 
 ### Instructions
 - My program expects four parameters to be placed on the command line when you run the program.
