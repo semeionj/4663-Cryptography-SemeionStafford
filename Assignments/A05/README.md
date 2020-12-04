@@ -29,4 +29,4 @@ Tried several methods for determining the actual key size. But eventually could 
 
 - Example Command:
     - `python python adfgx.py inputfile
-    - `python adfgx.py input.txt key1=superbad key2=hijack op=encrypt 
+    - `python adfgx.py input.txt
