@@ -27,9 +27,9 @@ Given a large number, determine if it is prime or if it can be factored. If it c
 - Parameters `<input file>`
 - The input file should be formatted with numbers on seperate line:
    
-   231697363
-   709
-   72490732415291
+   `231697363
+   `709
+   `72490732415291
 
 
 
