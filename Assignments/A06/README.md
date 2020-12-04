@@ -29,4 +29,4 @@ Given a large number, determine if it is prime or if it can be factored. If it c
 
 - Example Command:
     - `python python get_factors.py inputfile
-    - `python adfgx.py numbers.txt
+    - `python get_factors.py numbers.txt
