@@ -30,3 +30,8 @@ Given a large number, determine if it is prime or if it can be factored. If it c
 - Example Command:
     - `python python get_factors.py inputfile
     - `python get_factors.py numbers.txt
+
+### Sources
+-https://github.com/rtgdk/Breaking-Vigenere-Cipher/blob/master/cip.py
+-http://practicalcryptography.com/cryptanalysis/stochastic-searching/cryptanalysis-vigenere-cipher/
+-https://www.mygeocachingprofile.com/codebreaker.vigenerecipher.aspx
