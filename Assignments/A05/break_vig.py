@@ -7,6 +7,60 @@ import json
 
 ALPHABET = [chr(x+97) for x in range(26)]
 
+def gcd(b,c):
+	return c if (b==0) else gcd(c%b,b)
+	if (b==0):
+		return c
+	else :
+		return gcd(c%b,b)
+
+###############
+#   METHOD 4
+###############
+def findProbableKeyLength(cip):
+	print("Finding Key Length..\n")
+	size = len(cip)  # length of ciphertext
+	Ic = list()		# List of Ic, index i contains Ic for (i+1)-grams / (i+1)-substring
+	""" Looping for divding cipher text in n-substrings """
+	for i in range(1,41):
+		substring=list() # List of List, index i contains (i+1)th substrings
+		l1=list()		# List of Ic of individual substrings
+		for j in range(0,i):
+			substring.append([])  #Initialise the list of list to empty lists
+		for j in range(0,size):
+			substring[j%i].append(cip[j])  	# Assigning letter to their corresponding substring list
+		for j in range(0,len(substring)):
+			freq=dict()		# store the frequency of each letter
+			for k in substring[j]:
+				if k in freq:
+					freq[k] +=1
+				else :
+					freq[k] =1
+			sum = 0
+			for k in freq:
+				sum += freq[k]*(freq[k]-1)
+			sum = sum/(len(substring[j])*(len(substring[j])-1))
+			l1.append(sum)
+		sum=0
+		for j in l1:
+			sum += j
+		sum = sum/len(l1)
+		Ic.append(sum)
+	# Print the Ic values with corresponding N
+	for i in range(0,len(Ic)):
+		print(str(i+1) + "   :  " + str(Ic[i]))
+	freq2=dict()		#
+	for i in range(0,len(Ic)):
+		Ic[i] = abs(Ic[i]-0.065)
+		freq[i+1] = Ic[i]
+	absdiff = sorted(freq.items(), key = lambda x: x[1])	# list of sorted absolute difference with 0.065
+	print("Closest N to 0.065 = " + str(absdiff[0]))
+	absdiff = absdiff[:3] 	# Take top 3 closest key lengths and find their gcd, gcd is the key length
+	key = gcd(absdiff[0][0],absdiff[1][0])
+	key = gcd(key,absdiff[2][0])
+	print("Key Length = " + str(key))
+	return key
+
 def mykwargs(argv):
     '''
     Processes argv list into plain args (list) and kwargs (dict).
@@ -84,7 +138,9 @@ def crack(encrypted_text, dick, nchars):
         if len(key) - key.count(" ") - key.count("-") == nchars:
             print(key)
             convert(key, encrypted_text)
-
+###############
+#   METHOD 23
+###############
 def keyLength(text):
 
     ###LENGTH 2
@@ -348,7 +404,7 @@ def calculate_ic(ciphertext):
 
     letterFreq = []
     for letter in ALPHABET:
-        letterFreq.append(encrypted_text.count(letter))
+        letterFreq.append(ciphertext.count(letter))
 
     N = len(ciphertext)
 
@@ -373,9 +429,13 @@ def main(args, **kwarg):
     
     print(encrypted_text)
 
+    #Using Method 4
+    #k = findProbableKeyLength(encrypted_text)
+    #print(k, " is probable length.")
+
     encrypted_text = encrypted_text.lower()
     
-    #keyLength(encrypted_text.replace(" ", ""))
+    keyLength(encrypted_text.replace(" ", ""))
 
     #Numerator
     num = 0.0
@@ -390,6 +450,10 @@ def main(args, **kwarg):
     N = len(encrypted_text) - encrypted_text.count(" ") - encrypted_text.count(".") - encrypted_text.count(":") - encrypted_text.count("-") - encrypted_text.count(",") - encrypted_text.count(")") - encrypted_text.count("(")
     den = N * (N - 1)
 
+
+    ###############
+    #   METHOD 1
+    ###############
     avg = 0
     numavg = 0
     for letter in ALPHABET:
@@ -422,9 +486,12 @@ def main(args, **kwarg):
     else:
         nchars = 0;
 
-    #calculate_ic(encrypted_text)
     print("I.C. is ", index_c, "Number of chars is ", nchars)
 
+    #Using Method 2
+    #calculate_ic(encrypted_text)
+
+    #Using Method 3
     crack(encrypted_text, dick, nchars)
 
 if __name__ == '__main__':
