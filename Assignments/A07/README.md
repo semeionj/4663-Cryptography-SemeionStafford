@@ -4,7 +4,7 @@ The Pratt certificate was the first to introduce this model of primality certifi
 
 ### Atkin–Goldwasser–Kilian–Morain Certificates Primality Test
 As discussed above, Pratt certificate generation is inefficient for larger numbers. In order to avoid this issue and provide more effective certificate generation, a theory based on elliptic curves was developed by Shafi Goldwasser and Joe Kilian. A. O. L. Atkin and François Morain subsequently used this concept as a basis for Atkin-Goldwasser-Kilian-Morain certificates. These certificates are generated and verified by elliptic curve primality testing techniques. This primality certificate is recursive and it consist of:
-	An elliptic curve, C y2 = x3 + g2x + g3 (mod p) for some numbers g2 and g3
+	An elliptic curve, C, y2 = x3 + g2x + g3 (mod p) for some numbers g2 and g3
 	A prime q with q > (p1/4 + 1)2, such that for some other number k and m = kq with k != 1.
 	Each q has its recursive certificate following it. So, if the smallest q is known to be Prime, all the numbers are certified Prime up the chain.
 
@@ -50,22 +50,10 @@ Given an input integer n > 1, the algorithm;
 	For all 2 ≤ a ≤ min (r, n−1), check that a does not divide n: If a|n for some 2 ≤ a ≤ min (r, n−1), output composite.
 	If n ≤ r, output prime.
 	For a = 1 to   do if (X+a)n≠ Xn+a (mod Xr − 1,n), output composite;
-
 	Output Prime
 
 
-
-
-
-
-
-
-
-
-
-
-
-
+## Sources
 Adleman, L., Pomerance, C., & Rumely, R. (1983). On Distinguishing Prime Numbers from Composite Numbers. Annals of Mathematics, 117(1), second series, 173-206. doi:10.2307/2006975
 
 Cohen, H., & Lenstra, H. (1984). Primality Testing and Jacobi Sums. Mathematics of Computation, 42(165), 297-330. doi:10.2307/2007581
