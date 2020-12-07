@@ -8,5 +8,4 @@
 |   A06    |    <a href="https://github.com/semeionj/4663-Cryptography-SemeionStafford/tree/master/Assignments/A06 ">Prime Factors
 </a>        |         Determining if it is prime or if it can be factored               |
 |   A06    |    <a href="https://github.com/semeionj/4663-Cryptography-SemeionStafford/tree/master/Assignments/A07 ">Primality Tests
-
 </a>        |         Literature Review               |
