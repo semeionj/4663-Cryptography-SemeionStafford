@@ -1,3 +1,12 @@
+#  Literary Review (A07) - Semeion Stafford
+##  Primality Tests
+### Overview
+----------------------------------------------------------------------
+
+This program lit review is a brief examination of various methods of finding and verifying prime numbers using bother deterministic and non-deterministic methods. The three categories are Certification, Compositeness, and Deterministic.
+
+----------------------------------------------------------------------
+
 ## Certification
 ### Pratt Certificates Primality Test
 The Pratt certificate was the first to introduce this model of primality certificates. Although the general idea had been established for some time, Pratt developed this new concept based on the converse of Fermat’s Little Theorem *(Lehmer's Theorem)*. He established that the primality heuristic based on Lehmer’s theorem could be made a non-deterministic function if it is applied recursively to factors of *(n – 1)*, proving that the resulting tree demonstrates that prime factorization is in the complexity class NP. This means that It is solvable in polynomial time by a nondeterministic Turing machine. A Pratt certificate essentially proves that a number a is a primitive root of the multiplicative group *(mod p)*. Pratt’s concept establishes the fact that a has order p-1, proves that p is a prime. This requires knowledge of the prime factorization of *n-1*, and is normally used for small numbers (less than ~ 1,000,000,000).
@@ -27,7 +36,7 @@ Using Euler’s proof that for any prime number p and any integer a,
 
   where a/p is the Legendre symbol.
 
-Given an odd number n we can contemplate whether or not the congruence
+Given an odd number n we can contemplate whether or not the congruence <img src="Eq2.png" width="200">
   holds for various values of the "base" *a*, given that a is relatively prime to n. If n is prime then this congruence is true for all a. After picking random values and testing the congruence, when an a is not compatible with the congruence, we can deduce that the n is not prime.
 
 
@@ -50,7 +59,7 @@ Given an input integer n > 1, the algorithm;
 	Find the smallest r such that ord<sub>r</sub>(n) > (log<sub>2</sub>n)<sup>2</sup>. (if r and n are not coprime, then skip this r)
 	For all 2 ≤ a ≤ min (r, n−1), check that a does not divide n: If a|n for some 2 ≤ a ≤ min (r, n−1), output composite.
 	If n ≤ r, output prime.
-	For a = 1 to   do if (X+a)<sup>n</sup> ≠ X<sup>n</sup>+a (mod X<sup>r</sup> − 1,n), output composite;
+	For a = 1 to <img src="Eq3.png" width="200"> do if (X+a)<sup>n</sup> ≠ X<sup>n</sup>+a (mod X<sup>r</sup> − 1,n), output composite;
 	Output Prime
 
 
@@ -58,3 +67,7 @@ Given an input integer n > 1, the algorithm;
 Adleman, L., Pomerance, C., & Rumely, R. (1983). On Distinguishing Prime Numbers from Composite Numbers. Annals of Mathematics, 117(1), second series, 173-206. doi:10.2307/2006975
 
 Cohen, H., & Lenstra, H. (1984). Primality Testing and Jacobi Sums. Mathematics of Computation, 42(165), 297-330. doi:10.2307/2007581
+
+Pomerance, C. (1987). Very Short Primality Proofs. Mathematics of Computation, 48(177), 315-322. doi:10.2307/2007892
+
+https://mathworld.wolfram.com/
