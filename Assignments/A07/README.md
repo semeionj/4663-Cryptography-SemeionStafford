@@ -4,8 +4,9 @@ The Pratt certificate was the first to introduce this model of primality certifi
 
 ### Atkin–Goldwasser–Kilian–Morain Certificates Primality Test
 As discussed above, Pratt certificate generation is inefficient for larger numbers. In order to avoid this issue and provide more effective certificate generation, a theory based on elliptic curves was developed by Shafi Goldwasser and Joe Kilian. A. O. L. Atkin and François Morain subsequently used this concept as a basis for Atkin-Goldwasser-Kilian-Morain certificates. These certificates are generated and verified by elliptic curve primality testing techniques. This primality certificate is recursive and it consist of:
-	An elliptic curve, **C, y2 = x3 + g2x + g3 (mod p)** for some numbers g2 and g3
-	A prime q with q > (p1/4 + 1)<sup>2</sup>, such that for some other number k and m = kq with k != 1.
+	An elliptic curve, **C**, y<sup>2<sup> = x<sup>3</sup> + g<sub>2</sub>x + g<sub>3</sub> (mod p) for some numbers g2 and g3
+	A prime q with q > (p<sup>$$\frac{1}{4}$$
+</sup> + 1)<sup>2</sup>, such that for some other number k and m = kq with k != 1.
 	Each q has its recursive certificate following it. So, if the smallest q is known to be Prime, all the numbers are certified Prime up the chain.
 
 This method is fitting for generating certified large random primes and is an important component in cryptography functions such as proving the validity of RSA keys.
@@ -13,7 +14,7 @@ This method is fitting for generating certified large random primes and is an im
 ## Compositeness
 ### Fermat Primality Test Primality Test
 The Fermat primality test is based on Fermat’s little theorem and modular exponentiation. Fermat's Little Theorem states that if a is relatively prime to a prime number p, then
- 𝑝 – 1 ≡ 1 mod 𝑝. Efficiency was not a key concern, and the method uses probability in determining possible primes. A method always returns true if a given number is prime. A non-prime, or composite number may return true or false, but the probability of producing incorrect result for composite is low and can be reduced by doing more iterations.
+ *p – 1 ≡ 1 mod p*. Efficiency was not a key concern, and the method uses probability in determining possible primes. A method always returns true if a given number is prime. A non-prime, or composite number may return true or false, but the probability of producing incorrect result for composite is low and can be reduced by doing more iterations.
 
 ### Rabin-Miller Primality Test
 This test is similar to the Fermat (because it is a probabilistic method) and Solovay-Strassen primality test given that it depends on an equality or set of equalities that are true for prime values. This test however is preferred to Fermat. It then verifies whether or not they hold for a number that we want to test for primality. In a deeper context, using the claim that n is prime if and only if the solutions of x2 = 1 (mod n) are x = ±1.
