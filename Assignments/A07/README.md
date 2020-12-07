@@ -23,6 +23,7 @@ If a<sup>n-1</sup> = 1, then this implies n qualifies by means of the Fermat tes
 This test is also a probabilistic test to determine whether a number is possibly prime or composite. This is opposed to a test which would indicate definite primness or compositeness. Given of the time taken to do multiple checks in an exact test, the method instead aims to check if there is a high probability of a number being prime. In terms of its accuracy, if the input is prime, the output will definitely be probably prime, else, the output could incorrectly probable prime. This test is also used in RSA cryptosystem applications.
 
 Using Euler’s proof that for any prime number p and any integer a, 
+<img src="Eq1.png" width="200">
 
   where a/p is the Legendre symbol.
 
